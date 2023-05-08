@@ -34,4 +34,12 @@ describe('Button', () => {
 
     expect(callback).toBeCalled();
   });
+
+  it('class `test` should be in the input', () => {
+    render(<Button className="test">a</Button>);
+
+    const button = screen.getByRole('button');
+
+    expect(button.classList.contains('test')).toBeTruthy();
+  });
 });
