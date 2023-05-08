@@ -1,13 +1,13 @@
-import Control from '../Control/Control.component';
+import Control from '../Control/Control.component'
 
 function Menu() {
-  return (
-    <div className="flex py-1">
-      <Control>Add</Control>
-      <Control>Delete</Control>
-      <Control>Edit</Control>
-    </div>
-  );
+	return (
+		<div className="flex py-1">
+			<Control>Add</Control>
+			<Control>Delete</Control>
+			<Control>Edit</Control>
+		</div>
+	)
 }
 
-export default Menu;
+export default Menu

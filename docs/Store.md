@@ -2,7 +2,7 @@ Store as `React Context`
 
 ```ts
 interface Note {
-	date: Date,
+	date: Date
 	content: string
 }
 

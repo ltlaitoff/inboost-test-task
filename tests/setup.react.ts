@@ -1,8 +1,8 @@
-import { cleanup } from '@testing-library/react';
-import matchers from '@testing-library/jest-dom/matchers';
+import { cleanup } from '@testing-library/react'
+import matchers from '@testing-library/jest-dom/matchers'
 
-expect.extend(matchers);
+expect.extend(matchers)
 
 afterEach(() => {
-  cleanup();
-});
+	cleanup()
+})

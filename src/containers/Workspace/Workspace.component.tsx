@@ -1,5 +1,5 @@
 function Workspace() {
-  return <main>Workspace</main>;
+	return <main>Workspace</main>
 }
 
-export default Workspace;
+export default Workspace

@@ -1,11 +1,11 @@
 export interface Note {
-  id: string;
-  date: Date;
-  content: string;
+	id: string
+	date: Date
+	content: string
 }
 
 export interface RootState {
-  search: string;
-  notes: Note[];
-  chosenNoteId: string;
+	search: string
+	notes: Note[]
+	chosenNoteId: string
 }

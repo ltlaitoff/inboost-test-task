@@ -1,4 +1,4 @@
 export interface ControlProps {
-  children: React.ReactNode;
-  onClick?: () => void;
+	children: React.ReactNode
+	onClick?: () => void
 }
