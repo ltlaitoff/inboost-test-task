@@ -39,4 +39,6 @@ describe('Button', () => {
 
 		expect(button.classList.contains('test')).toBeTruthy()
 	})
+
+	it.todo('disabled')
 })
