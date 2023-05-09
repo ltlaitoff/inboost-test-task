@@ -8,7 +8,7 @@ function App() {
 		<StoreProvider>
 			<Header />
 
-			<div className="flex">
+			<div className="max-w-[1440px] mx-auto flex h-full">
 				<Sidebar />
 				<Workspace />
 			</div>
