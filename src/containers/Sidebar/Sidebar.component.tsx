@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { useStore } from '../../contexts/store.context'
 import { setChosenNoteIdAction } from '../../store/store.actions'
 import {
@@ -14,19 +15,24 @@ function Sidebar() {
 	}
 
 	return (
-		<aside className="max-w-xs border w-full h-full">
+		<aside className="max-w-xs w-full h-full border-r-[1px] border-r-gray-200">
 			<ul>
 				{state.notes.map(item => {
 					return (
 						<li key={item.id}>
 							<button
 								onClick={() => onItemClick(item.id)}
-								className="px-6 py-2 text-left w-full border-b-[1px]"
+								className={classNames(
+									'px-6 py-2 text-left w-full border-b-[1px]',
+									{
+										'bg-slate-200': state.chosenNoteId === item.id
+									}
+								)}
 							>
 								<div className="font-bold">
 									{getTitleByContent(item.content)}
 								</div>
-								<div className="flex gap-x-2 items-center ">
+								<div className="flex gap-x-3 items-center font-light text-gray-500">
 									<div className="">{transformDateForOutput(item.date)}</div>
 									<div className="text-sm font-light">
 										{getContentPreviewByContent(item.content)}
