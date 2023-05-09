@@ -11,9 +11,10 @@ function Button(props: ButtonProps) {
 	return (
 		<button
 			className={classNames(
-				'py-2 px-4 text-base border border-slate-600 text-slate-700 bg-white hover:bg-purple-100 rounded-md transition-all',
+				'py-2 px-4 text-base border border-slate-600 rounded-md transition-all',
 				props.className,
 				{
+					'bg-white hover:bg-purple-100 text-slate-700': !props.disabled,
 					'bg-slate-200 hover:bg-slate-200 text-slate-400': props.disabled
 				}
 			)}
