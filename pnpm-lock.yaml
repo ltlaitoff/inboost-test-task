@@ -4,6 +4,9 @@ dependencies:
   classnames:
     specifier: ^2.3.2
     version: 2.3.2
+  idb:
+    specifier: ^7.1.1
+    version: 7.1.1
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -2064,6 +2067,10 @@ packages:
     dependencies:
       safer-buffer: 2.1.2
     dev: true
+
+  /idb@7.1.1:
+    resolution: {integrity: sha512-gchesWBzyvGHRO9W8tzUWFDycow5gwjvFKfyV9FF32Y7F50yZMp7mP+T2mJIWFx49zicqyC4uefHM17o6xKIVQ==}
+    dev: false
 
   /ignore@5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
