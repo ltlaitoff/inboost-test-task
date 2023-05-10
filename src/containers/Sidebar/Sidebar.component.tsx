@@ -6,6 +6,7 @@ import {
 	getTitleByContent,
 	transformDateForOutput
 } from './helpers'
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 
 function Sidebar() {
 	const { state, dispatch } = useStore()
@@ -29,13 +30,20 @@ function Sidebar() {
 									}
 								)}
 							>
-								<div className="font-bold">
-									{getTitleByContent(item.content)}
+								<div className="font-bold text-ellipsis overflow-x-hidden min-h-[24px]">
+									<ReactMarkdown>
+										{getTitleByContent(item.content)}
+									</ReactMarkdown>
 								</div>
+
 								<div className="flex gap-x-3 items-center font-light text-gray-500">
-									<div className="">{transformDateForOutput(item.date)}</div>
-									<div className="text-sm font-light">
-										{getContentPreviewByContent(item.content)}
+									<div className="whitespace-nowrap">
+										{transformDateForOutput(item.date)}
+									</div>
+									<div className="text-sm font-light text-ellipsis overflow-x-hidden">
+										<ReactMarkdown>
+											{getContentPreviewByContent(item.content)}
+										</ReactMarkdown>
 									</div>
 								</div>
 							</button>
