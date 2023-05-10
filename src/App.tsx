@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import Header from './containers/Header/Header.component'
 import Sidebar from './containers/Sidebar/Sidebar.component'
 import Workspace from './containers/Workspace/Workspace.component'
@@ -6,6 +7,32 @@ import { database } from './utils/database'
 import { setStateAction } from './store/store.actions'
 
 function App() {
+	const { state, dispatch } = useStore()
+
+	const isMountRef = useRef(false)
+
+	useEffect(() => {
+		async function fetchData() {
+			await database.intialize()
+			const storeFromDatabase = await database.getStore()
+
+			if (storeFromDatabase) {
+				dispatch(setStateAction(storeFromDatabase))
+			}
+		}
+
+		fetchData()
+	}, [])
+
+	useEffect(() => {
+		if (isMountRef.current) {
+			database.updateStore(state)
+			return
+		}
+
+		isMountRef.current = true
+	}, [state])
+
 	return (
 		<div className="h-full flex flex-col">
 			<Header />
@@ -15,7 +42,6 @@ function App() {
 				<Workspace />
 			</div>
 		</div>
-		</StoreProvider>
 	)
 }
 
