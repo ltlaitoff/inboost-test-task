@@ -1,6 +1,18 @@
-import { Note } from './store.types'
+import { Note, RootState } from './store.types'
 
 export const UPDATE_NOTE = 'UPDATE_NOTE'
+
+type SetStateAction = {
+	type: 'SET_STATE'
+	payload: RootState
+}
+
+export function setStateAction(value: RootState): SetStateAction {
+	return {
+		type: 'SET_STATE',
+		payload: value
+	}
+}
 
 type SetSearchAction = {
 	type: 'SET_SEARCH'
@@ -77,6 +89,7 @@ export function setChosenNoteStatusAction(
 }
 
 export type StoreActions =
+	| SetStateAction
 	| SetSearchAction
 	| AddNoteAction
 	| DeleteNoteAction

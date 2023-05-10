@@ -13,6 +13,10 @@ export function storeReducer(
 	action: StoreActions
 ): RootState {
 	switch (action.type) {
+		case 'SET_STATE': {
+			return { ...action.payload }
+		}
+
 		case 'SET_SEARCH': {
 			return { ...state, search: action.payload }
 		}
