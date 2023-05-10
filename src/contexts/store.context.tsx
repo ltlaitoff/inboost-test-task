@@ -7,12 +7,12 @@ type StoreProviderProps = {
 	children: React.ReactNode
 }
 
-type Dispatch = (action: StoreActions) => void
+export type StoreContextDispatch = (action: StoreActions) => void
 
 const StoreContext = React.createContext<
 	| {
 			state: RootState
-			dispatch: Dispatch
+			dispatch: StoreContextDispatch
 	  }
 	| undefined
 >(undefined)
