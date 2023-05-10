@@ -30,8 +30,8 @@ function Sidebar() {
 									}
 								)}
 							>
-								<div className="font-bold text-ellipsis overflow-x-hidden min-h-[24px]">
-									<ReactMarkdown>
+								<div className="font-bold min-h-[24px]">
+									<ReactMarkdown className="[&>*]:text-ellipsis [&>*]:overflow-x-hidden [&>*]:whitespace-nowrap ">
 										{getTitleByContent(item.content)}
 									</ReactMarkdown>
 								</div>
@@ -41,7 +41,7 @@ function Sidebar() {
 										{transformDateForOutput(item.date)}
 									</div>
 									<div className="text-sm font-light text-ellipsis overflow-x-hidden">
-										<ReactMarkdown>
+										<ReactMarkdown className="[&>*]:text-ellipsis [&>*]:overflow-x-hidden [&>*]:whitespace-nowrap ">
 											{getContentPreviewByContent(item.content)}
 										</ReactMarkdown>
 									</div>
