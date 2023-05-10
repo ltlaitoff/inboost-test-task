@@ -6,11 +6,13 @@ import { StoreProvider } from './contexts/store.context'
 function App() {
 	return (
 		<StoreProvider>
-			<Header />
+			<div className="h-full flex flex-col">
+				<Header />
 
-			<div className="max-w-[1440px] mx-auto flex h-full">
-				<Sidebar />
-				<Workspace />
+				<div className="w-full max-w-[1440px] mx-auto flex h-full">
+					<Sidebar />
+					<Workspace />
+				</div>
 			</div>
 		</StoreProvider>
 	)
