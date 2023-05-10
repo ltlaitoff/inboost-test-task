@@ -4,7 +4,8 @@ import { RootState } from './store.types'
 export const storeInitialState: RootState = {
 	search: '',
 	notes: [],
-	chosenNoteId: ''
+	chosenNoteId: '',
+	chosenNoteStatus: 'preview'
 }
 
 export function storeReducer(
@@ -39,7 +40,15 @@ export function storeReducer(
 		}
 
 		case 'SET_CHOSEN_NOTE_ID': {
-			return { ...state, chosenNoteId: action.payload }
+			return {
+				...state,
+				chosenNoteId: action.payload,
+				chosenNoteStatus: 'preview'
+			}
+		}
+
+		case 'CHOSEN_NOTE_STATUS': {
+			return { ...state, chosenNoteStatus: action.payload }
 		}
 
 		default: {

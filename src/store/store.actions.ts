@@ -62,9 +62,24 @@ export function updateNoteAction(value: Note): UpdateNoteAction {
 	}
 }
 
+type SetChosenNoteStatusAction = {
+	type: 'CHOSEN_NOTE_STATUS'
+	payload: 'edit' | 'preview'
+}
+
+export function setChosenNoteStatusAction(
+	value: 'edit' | 'preview'
+): SetChosenNoteStatusAction {
+	return {
+		type: 'CHOSEN_NOTE_STATUS',
+		payload: value
+	}
+}
+
 export type StoreActions =
 	| SetSearchAction
 	| AddNoteAction
 	| DeleteNoteAction
 	| SetChosenNoteIdAction
 	| UpdateNoteAction
+	| SetChosenNoteStatusAction
