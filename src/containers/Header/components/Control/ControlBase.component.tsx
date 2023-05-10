@@ -1,8 +1,8 @@
 import classnames from 'classnames'
 import Button from '../../../../components/Button/Button.component'
-import { ControlProps } from './Control.types'
+import { ControlBaseProps } from './ControlBase.types'
 
-function Control(props: ControlProps) {
+function ControlBase(props: ControlBaseProps) {
 	const onClick = () => {
 		if (props.disabled) return
 
@@ -20,4 +20,4 @@ function Control(props: ControlProps) {
 	)
 }
 
-export default Control
+export default ControlBase

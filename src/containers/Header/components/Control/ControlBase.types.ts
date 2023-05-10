@@ -1,4 +1,4 @@
-export interface ControlProps {
+export interface ControlBaseProps {
 	children: React.ReactNode
 	disabled?: boolean
 	className?: string
