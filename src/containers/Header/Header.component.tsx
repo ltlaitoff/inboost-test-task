@@ -3,7 +3,7 @@ import SearchBox from './components/SearchBox/SearchBox.component'
 
 function Header() {
 	return (
-		<header className="w-full bg-white shadow-sm">
+		<header className="w-full bg-white shadow-sm px-2">
 			<div className="max-w-[1440px] mx-auto flex justify-between">
 				<Controls />
 				<SearchBox />
