@@ -1,0 +1,9 @@
+.sidebar-closed-button {
+	display: inline-block!;
+}
+
+@media screen and (min-width: 900px) {
+	.sidebar-closed-button {
+		display: none;
+	}
+}
