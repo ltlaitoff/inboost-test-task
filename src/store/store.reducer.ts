@@ -5,7 +5,8 @@ export const storeInitialState: RootState = {
 	search: '',
 	notes: [],
 	chosenNoteId: '',
-	chosenNoteStatus: 'preview'
+	chosenNoteStatus: 'preview',
+	sidebarOpened: false
 }
 
 export function storeReducer(
@@ -53,6 +54,10 @@ export function storeReducer(
 
 		case 'CHOSEN_NOTE_STATUS': {
 			return { ...state, chosenNoteStatus: action.payload }
+		}
+
+		case 'TOGGLE_SIDEBAR_OPENED': {
+			return { ...state, sidebarOpened: action.payload }
 		}
 
 		default: {

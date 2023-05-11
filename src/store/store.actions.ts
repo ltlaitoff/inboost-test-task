@@ -88,6 +88,20 @@ export function setChosenNoteStatusAction(
 	}
 }
 
+type SetToggleSidebarOpenedAction = {
+	type: 'TOGGLE_SIDEBAR_OPENED'
+	payload: boolean
+}
+
+export function setSidebarOpenedAction(
+	value: boolean
+): SetToggleSidebarOpenedAction {
+	return {
+		type: 'TOGGLE_SIDEBAR_OPENED',
+		payload: value
+	}
+}
+
 export type StoreActions =
 	| SetStateAction
 	| SetSearchAction
@@ -96,3 +110,4 @@ export type StoreActions =
 	| SetChosenNoteIdAction
 	| UpdateNoteAction
 	| SetChosenNoteStatusAction
+	| SetToggleSidebarOpenedAction

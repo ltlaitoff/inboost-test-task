@@ -9,4 +9,5 @@ export interface RootState {
 	notes: Note[]
 	chosenNoteId: string
 	chosenNoteStatus: 'edit' | 'preview'
+	sidebarOpened: boolean
 }
