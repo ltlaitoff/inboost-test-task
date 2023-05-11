@@ -23,7 +23,8 @@ function Workspace() {
 		dispatch(
 			updateNoteAction({
 				...currentNote,
-				content: e.target.value
+				content: e.target.value,
+				date: new Date()
 			})
 		)
 	}
