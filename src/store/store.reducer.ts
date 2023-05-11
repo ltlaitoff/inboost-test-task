@@ -26,9 +26,9 @@ export function storeReducer(
 		}
 
 		case 'DELETE_NOTE': {
-			const newNotes = state.notes.filter(note => note.id !== action.payload.id)
+			const newNotes = state.notes.filter(note => note.id !== action.payload)
 
-			return { ...state, notes: newNotes }
+			return { ...state, notes: newNotes, chosenNoteStatus: 'preview' }
 		}
 
 		case 'UPDATE_NOTE': {

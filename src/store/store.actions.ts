@@ -40,10 +40,10 @@ export function addNoteAction(value: Note): AddNoteAction {
 
 type DeleteNoteAction = {
 	type: 'DELETE_NOTE'
-	payload: Note
+	payload: string
 }
 
-export function deleteNoteAction(value: Note): DeleteNoteAction {
+export function deleteNoteAction(value: string): DeleteNoteAction {
 	return {
 		type: 'DELETE_NOTE',
 		payload: value
