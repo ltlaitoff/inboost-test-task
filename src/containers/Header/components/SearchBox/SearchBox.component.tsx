@@ -12,7 +12,7 @@ function SearchBox() {
 	return (
 		<div className="py-2">
 			<input
-				className="h-full px-3 text-slate-600 rounded-md hover:border-2 hover:border-purple-400"
+				className="h-full max-w-xs w-full px-3 text-slate-600 rounded-md hover:border-2 hover:border-purple-400"
 				placeholder="Search"
 				value={state.search}
 				onChange={onChange}
