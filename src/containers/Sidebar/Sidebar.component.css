@@ -1,0 +1,9 @@
+.sidebar-closed {
+	display: inline-block!;
+}
+
+@media screen and (max-width: 900px) {
+	.sidebar-closed {
+		display: none;
+	}
+}

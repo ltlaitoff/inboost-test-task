@@ -8,6 +8,9 @@ import {
 } from './helpers'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 
+import './Sidebar.component.css'
+import classnames from 'classnames'
+
 function Sidebar() {
 	const { state, dispatch } = useStore()
 
@@ -16,7 +19,14 @@ function Sidebar() {
 	}
 
 	return (
-		<aside className="max-w-xs w-full h-full border-r-[1px] border-r-gray-200">
+		<aside
+			className={classnames(
+				'max-w-xs w-full h-full border-r-[1px] border-r-gray-200',
+				{
+					'sidebar-closed': state.sidebarOpened
+				}
+			)}
+		>
 			<ul>
 				{state.notes.map(item => {
 					return (
