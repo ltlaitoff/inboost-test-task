@@ -11,7 +11,10 @@ function ControlBase(props: ControlBaseProps) {
 
 	return (
 		<Button
-			className={classnames('px-4 py-3 border-none', props.className)}
+			className={classnames(
+				'md:px-4 md:py-3 px-2 py-2  border-none',
+				props.className
+			)}
 			onClick={onClick}
 			disabled={props.disabled}
 		>
