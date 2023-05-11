@@ -37,7 +37,7 @@ function App() {
 		<div className="h-full flex flex-col">
 			<Header />
 
-			<div className="w-full max-w-[1440px] mx-auto flex h-full">
+			<div className="w-full max-w-[1440px] mx-auto flex h-[calc(100%-56px)]">
 				<Sidebar />
 				<Workspace />
 			</div>
