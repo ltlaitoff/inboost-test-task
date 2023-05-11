@@ -47,7 +47,7 @@ function Workspace() {
 			{state.chosenNoteStatus === 'edit' && (
 				<div className="mt-3 px-4 py-2 h-full">
 					<textarea
-						className="w-full h-full"
+						className="w-full h-full outline rounded-sm outline-2 outline-gray-400 outline-offset-4 focus-visible:outline-pink-400"
 						onChange={e => onChange(e)}
 						defaultValue={currentNote.content}
 					></textarea>
