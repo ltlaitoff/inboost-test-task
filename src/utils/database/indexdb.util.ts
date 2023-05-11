@@ -5,11 +5,13 @@ let database: null | Promise<IDBPDatabase<RootState>> = null
 
 export async function intialize() {
 	database = openDB('apple-notes-copy', 1, {
-		upgrade(db, oldVersion) {
+		async upgrade(db, oldVersion) {
 			switch (oldVersion) {
-				case 0:
+				case 0: {
 					db.createObjectStore('store')
+
 					break
+				}
 			}
 		}
 	})
@@ -28,17 +30,28 @@ export async function updateStore(state: RootState) {
 }
 
 export async function getStore(): Promise<RootState | undefined> {
-	console.log('getStore')
-
 	if (database === null) return
 
 	const transaction = (await database).transaction('store', 'readwrite')
 	const store = transaction.objectStore('store')
 
+	const chosenNoteId = await store.get('chosenNoteId')
+	const search = await store.get('search')
+	const notes = await store.get('notes')
+	const chosenNoteStatus = await store.get('chosenNoteStatus')
+
+	if (
+		chosenNoteId == undefined ||
+		search == undefined ||
+		notes == undefined ||
+		chosenNoteStatus == undefined
+	)
+		return
+
 	return {
-		chosenNoteId: await store.get('chosenNoteId'),
-		search: await store.get('search'),
-		notes: await store.get('notes'),
-		chosenNoteStatus: await store.get('chosenNoteStatus')
+		chosenNoteId,
+		search,
+		notes,
+		chosenNoteStatus
 	}
 }
