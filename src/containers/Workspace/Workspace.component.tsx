@@ -1,6 +1,7 @@
 import { ChangeEvent, useMemo } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 
 import './Workspace.component.css'
 
@@ -15,7 +16,27 @@ function Workspace() {
 		return state.notes.find(note => note.id === state.chosenNoteId)
 	}, [state.notes, state.chosenNoteId])
 
-	if (!currentNote) return null
+	const contentWithMarks = useMemo(() => {
+		if (!currentNote) return
+
+		if (!state.search) return currentNote.content
+
+		const loweredSearch = state.search.toLowerCase()
+
+		const parts = currentNote.content.split(
+			new RegExp(`(${loweredSearch})`, 'gi')
+		)
+
+		const res = parts.map(part => {
+			return part.toLowerCase() === loweredSearch
+				? `<mark>${part}</mark>`
+				: part
+		})
+
+		return res.join('')
+	}, [currentNote, state.search])
+
+	if (!currentNote || contentWithMarks == undefined) return null
 
 	const onChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
 		if (!currentNote) return
@@ -39,8 +60,10 @@ function Workspace() {
 				<ReactMarkdown
 					className="markdown-body mt-3 px-4 py-2 h-full overflow-y-scroll"
 					remarkPlugins={[remarkGfm]}
+					rehypePlugins={[rehypeRaw]}
+					skipHtml={false}
 				>
-					{currentNote.content}
+					{contentWithMarks}
 				</ReactMarkdown>
 			)}
 
