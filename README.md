@@ -14,8 +14,13 @@ Online version: [link]([inboost-test-task.vercel.app](https://inboost-test-task.
 ## Main commands
 
 `pnpm install` - Install dependencies
+
 `pnpm run dev` - Run locally
+
 `pnpm run build` - Build
+
 `pnpm run linr` - Eslint
+
 `pnpm run test` or `pnpm test` - Run tests
+
 `pnpm run coverage` - Coverage
