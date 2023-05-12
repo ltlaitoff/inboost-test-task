@@ -27,6 +27,7 @@ export async function updateStore(state: RootState) {
 	await store.put(state.chosenNoteId, 'chosenNoteId')
 	await store.put(state.notes, 'notes')
 	await store.put(state.chosenNoteStatus, 'chosenNoteStatus')
+	await store.put(state.sidebarOpened, 'sidebarOpened')
 }
 
 export async function getStore(): Promise<RootState | undefined> {
@@ -39,12 +40,14 @@ export async function getStore(): Promise<RootState | undefined> {
 	const search = await store.get('search')
 	const notes = await store.get('notes')
 	const chosenNoteStatus = await store.get('chosenNoteStatus')
+	const sidebarOpened = await store.get('sidebarOpened')
 
 	if (
 		chosenNoteId == undefined ||
 		search == undefined ||
 		notes == undefined ||
-		chosenNoteStatus == undefined
+		chosenNoteStatus == undefined ||
+		sidebarOpened == undefined
 	)
 		return
 
@@ -52,6 +55,7 @@ export async function getStore(): Promise<RootState | undefined> {
 		chosenNoteId,
 		search,
 		notes,
-		chosenNoteStatus
+		chosenNoteStatus,
+		sidebarOpened
 	}
 }
